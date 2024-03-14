@@ -4,6 +4,8 @@ docker run -it \
   -e POSTGRES_USER="root" \
   -e POSTGRES_PASSWORD="root" \
   -e POSTGRES_DB="ny_taxi" \
-  -v c:/Users/roque/Documents/Zoomcamp/ny_taxi_postgres_data:/var/lib/postgresql/data:rw \
+  -v c:/Users/roque/Documents/GitHub/develop_docker_batch_ingest/ny_taxi_postgres_data:/var/lib/postgresql/data:rw \
   -p 5432:5432 \
- postgres:13    
+  --network=pg-network-latest \
+  --name pg-database \
+  postgres:13  
